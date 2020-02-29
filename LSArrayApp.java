@@ -1,16 +1,16 @@
 import java.util.Scanner;
 import java.io.File;
 
-public class LSArrayAppT{
+public class LSArrayApp{
 	//Array of LSC objects as instance variable
 	private LSC[] LSArray;
 
 	//constructor
-	public LSArrayAppT(){
+	public LSArrayApp(){
 		LSArray = {}; // empty array
 		}
 
-	public LSArrayAppT(LSC[] array){
+	public LSArrayApp(LSC[] array){
 		LSArray = Array;
 		}
 	
@@ -31,6 +31,7 @@ public class LSArrayAppT{
 	public static void main(String[] args){
 		File file = new File("Load_Shedding_All_Areas_Schedule_and_Map.clean.final");// add exc file not found
 		Scanner scFile = new Scanner(file);
+
 
 
 
