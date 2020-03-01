@@ -46,6 +46,13 @@ public class LSC{
                 return time;
                 }
 
+	public String getInfo(){
+		return stage + " " + day + " " + time;
+		}
+	public String[] getZones(){
+		return zones;
+		}
+
 
 	}// end of class
 	

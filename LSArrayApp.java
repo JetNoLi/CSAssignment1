@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 import java.io.*;
 
 public class LSArrayApp{
@@ -39,6 +39,31 @@ public class LSArrayApp{
 		return LSArray;
 		}
 
+	//methods
+	public static String makeInfo(String stage, String day, String startTime){
+		return stage + " " + day + " " + startTime;
+		}
+	
+	public void printAreas(String stage, String day, String startTime){
+		boolean check = false;
+		for (int i = 0; i <= arrLength -1; i++){
+			if (LSArray[i].getInfo().equals(LSArrayApp.makeInfo(stage, day, startTime))){
+				System.out.println("Zones: " + Arrays.toString(LSArray[i].getZones()));
+				check = true;
+				}
+			}
+		if (check = false){
+			System.out.println("Areas not Found");
+			}
+		}
+	
+	public void printAllAreas(){
+		for (int i = 0; i < arrLength-1; i++){
+			System.out.println(LSArray[i]);
+			}
+		}
+
+
 	//main
 	public static void main(String[] args){
 		LSArrayApp LSArray = new LSArrayApp();
@@ -59,7 +84,15 @@ public class LSArrayApp{
 			System.out.println("Error: File Not Found");
 			}
 
-		LSC[] array = LSArray.getArray();	
+		Scanner scan = new Scanner(System.in);
+		if(args.length == 3){
+			LSArray.printAreas(args[0],args[1],args[2]);
+			}
+		else{
+			LSArray.printAllAreas();
+			}
+	
+		
 		
 		}
 	}
