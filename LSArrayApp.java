@@ -84,7 +84,7 @@ public class LSArrayApp{
 			System.out.println("Error: File Not Found");
 			}
 
-		Scanner scan = new Scanner(System.in);
+		//Scanner scan = new Scanner(System.in);
 		if(args.length == 3){
 			LSArray.printAreas(args[0],args[1],args[2]);
 			}

@@ -1,6 +1,6 @@
 import java.util.Arrays;
-
-public class LSC{
+import java.lang.Comparable;
+public class LSC implements Comparable<LSC>{
 	
 	//instance variables
 	private String stage;
@@ -9,11 +9,11 @@ public class LSC{
 	private String[] zones;
 
 	//constructors
-	public LSC(String stage, String day, String time, String[] zones){
+	public LSC(String stage, String day, String time){
 		this.stage = stage;
 		this.day = day;
 		this.time = time;
-		this.zones = zones;
+		zones = null;
 		}
 
 	public LSC(String key){
@@ -49,9 +49,16 @@ public class LSC{
 	public String getInfo(){
 		return stage + " " + day + " " + time;
 		}
+
 	public String[] getZones(){
 		return zones;
 		}
+
+	public int compareTo(LSC item){
+		return this.getInfo().compareTo(item.getInfo());
+		}
+
+
 
 
 	}// end of class
