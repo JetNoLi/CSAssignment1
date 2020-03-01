@@ -1,16 +1,16 @@
-public class LSC extends Key{
+public class LSC{
 	
-	//Key + stores zones
+	//instance variables
+	private int stage;
+        private String day;
+        private String time;
 	private int[] zones;
 
 	//constructors
-	public LSC(int stage, int day, int time, int[] zones){
-		super(stage,day,time,key);
-		this.zones = zones;
-		}
-
-	public LSC(Key k, int[] zones){
-		super(k.getStage(), k.getDay(), k.getTime());
+	public LSC(int stage, String day, String time, int[] zones){
+		this.stage = stage;
+		this.day = day;
+		this.time = time;
 		this.zones = zones;
 		}
 
@@ -22,13 +22,31 @@ public class LSC extends Key{
                 for (int i = 0; i < zoneArray.length; i++){
                         zoneA[i] = Integer.parseInt(zoneArray[i]);
                         }
-		super(Integer.parseInt(varArray[0]),varArray[1],varArray[2]);
+		stage = Integer.parseInt(varArray[0]);
+		day = varArray[1];
+		time = varArray[2];
 		this.zones = zoneA;
 		}
 
 	
 	
 	//methods
+	public String toString(){
+                return "Stage: "+ stage + " Day: " + day + " Time " + time + " Zones: " + zones;
+                }
+
+        public int getStage(){
+                return stage;
+                }
+
+        public String getDay(){
+                return day;
+                }
+
+        public String getTime(){
+                return time;
+                }
+
 
 	}// end of class
 	
