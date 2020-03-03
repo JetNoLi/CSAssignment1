@@ -3,12 +3,14 @@ import java.io.*;
 
 public class LSBSTApp{
 	//instance variable - Binary Search Tree of Type LSC
-	private BinarySearchTree<LSC> LSTree;	
+	private BinarySearchTree<LSC> LSTree;
+	private int inCounter; //Instrumentation counter variable	
 	
 	//constructor - Creates an empty Binary Search Tree of Type LSC and stores it as an instance variable which we	can access through various accessor methods
 	
 	public LSBSTApp(){
 		LSTree = new BinarySearchTree<LSC>();
+		inCounter = 0;
 		}
 
 	//methods 
@@ -17,9 +19,18 @@ public class LSBSTApp{
 		}
 
 	public void printAreas(String stage, String day, String startTime){// prints out the zones matching the key
+		
+		try{
+			//LSC item = LSTree.find(new LSC(stage,day,startTime)).getData()// finds the matching LSC in the
+			System.out.println("Areas Affected: " + Arrays.toString((LSTree.find(new LSC(stage,day,startTime)).getData()).getZones()));// check for not found
+		
+			}
 
-		System.out.println("Areas Affected: " + Arrays.toString((LSTree.find(new LSC(stage,day,startTime)).getData()).getZones()));// check for not found
+		catch(NullPointerException e){
+			System.out.println("Area Not Found");
+			}
 		}
+
 	
 	public void printAllAreas(){ // prints out a list of all zones affected
 		LSTree.inOrder();
