@@ -3,14 +3,12 @@ import java.io.*;
 
 public class LSBSTApp{
 	//instance variable - Binary Search Tree of Type LSC
-	private BinarySearchTree<LSC> LSTree;
-	private int inCounter; //Instrumentation counter variable	
+	private BinarySearchTree<LSC> LSTree;	
 	
 	//constructor - Creates an empty Binary Search Tree of Type LSC and stores it as an instance variable which we	can access through various accessor methods
 	
 	public LSBSTApp(){
 		LSTree = new BinarySearchTree<LSC>();
-		inCounter = 0;
 		}
 
 	//methods 
@@ -37,6 +35,16 @@ public class LSBSTApp{
 		}
 		
 	
+	//instrumentation methods
+	public int getInCounter(){
+		return LSTree.getCounter();
+		}
+
+	public void resetCounter(){
+		LSTree.resetCounter();
+		}
+
+	
 
 	//main
 	public static void main(String[] args){
@@ -55,6 +63,7 @@ public class LSBSTApp{
 
 		if (args.length == 3){
 			LSCTree.printAreas(args[0],args[1],args[2]);
+			System.out.println("Instrumentation Counter: " + LSCTree.getInCounter());
 			}
 		else if (args.length == 0){
 			LSCTree.printAllAreas();

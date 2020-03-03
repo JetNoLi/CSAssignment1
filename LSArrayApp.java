@@ -63,7 +63,7 @@ public class LSArrayApp{
 				}
 			}
 
-		if (check = false){
+		if (check == false){
 			System.out.println("Areas not Found");
 			}
 		}
