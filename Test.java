@@ -27,7 +27,7 @@ public class Test{
 
                 if(args.length == 4){
                         LSArray.printAreasNull(args[0],args[1],args[2]);
-                        System.out.println("Instrumentation Counter = " + LSArray.getInCounter()+ "   " + args[0] + args[1] + args[2]);
+                        System.out.println("Instrumentation Counter = " + LSArray.getInCounter());
                         }
 
                 else if (args.length == 0){
