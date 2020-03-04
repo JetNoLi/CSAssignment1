@@ -84,6 +84,18 @@ public class LSArrayApp{
 		inCounter = 0;
 		}
 
+	public void printAreasNull(String stage, String day, String startTime){
+		for (int i = 0; i <= arrLength -1; i++){
+                        // instrumentation -  check keys are the same
+                        inCounter++;
+
+                        if (LSArray[i].getInfo().equals(LSArrayApp.makeInfo(stage, day, startTime))){
+                                break;
+                                }
+                        }
+		}
+
+
 
 	//main
 	public static void main(String[] args){

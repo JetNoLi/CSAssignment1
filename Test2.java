@@ -1,21 +1,21 @@
 import java.util.*;
 import java.io.*;
 
-public class Test{
-	private String fileName;
+public class Test2{
+        private String fileName;
 
-	public Test(String file){
-		fileName = file;
-		}
+        public Test2(String file){
+                fileName = file;
+                }
 
-	public static void main(String[] args){
-                LSArrayApp LSArray = new LSArrayApp();
+        public static void main(String[] args){
+                LSBSTApp LSCTree = new LSBSTApp();
 
                 try{
                         Scanner scFile = new Scanner(new File(args[3]));
                         while(scFile.hasNextLine()){
                                 LSC newLSC = new LSC(scFile.nextLine());
-                                LSArray.addToArray(newLSC);
+                                LSCTree.addToTree(newLSC);
                                 }
 
                         }
@@ -26,12 +26,13 @@ public class Test{
                         }
 
                 if(args.length == 4){
-                        LSArray.printAreasNull(args[0],args[1],args[2]);
-                        System.out.println("Instrumentation Counter = " + LSArray.getInCounter()+ "   " + args[0] + args[1] + args[2]);
+                        LSCTree.printAreasNull(args[0],args[1],args[2]);
+                        System.out.println("Find Counter = " + LSCTree.getFinCounter());
+			System.out.println("Insert Counter = " + LSCTree.getInsCounter());
                         }
 
                 else if (args.length == 0){
-                        LSArray.printAllAreas();
+                        LSCTree.printAllAreas();
                         }
 
                 else{
@@ -40,4 +41,5 @@ public class Test{
                         }
 
                 }
-	}
+        }
+

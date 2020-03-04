@@ -36,13 +36,29 @@ public class LSBSTApp{
 		
 	
 	//instrumentation methods
-	public int getInCounter(){
-		return LSTree.getCounter();
+	public int getInsCounter(){
+		return LSTree.getInsCounter();
+		}
+
+	public int getFinCounter(){
+		return LSTree.getFinCounter();
 		}
 
 	public void resetCounter(){
 		LSTree.resetCounter();
 		}
+
+	public void printAreasNull(String stage, String day, String startTime){
+          	try{
+                        LSC item = LSTree.find(new LSC(stage,day,startTime)).getData();
+
+                        }
+
+                catch(NullPointerException e){
+                        System.out.println("Area Not Found");
+                        }
+                }
+
 
 	
 
@@ -63,7 +79,8 @@ public class LSBSTApp{
 
 		if (args.length == 3){
 			LSCTree.printAreas(args[0],args[1],args[2]);
-			System.out.println("Instrumentation Counter: " + LSCTree.getInCounter());
+			System.out.println("Insert Counter: " + LSCTree.getInsCounter());
+			System.out.println("Insert Counter: " + LSCTree.getFinCounter());
 			}
 		else if (args.length == 0){
 			LSCTree.printAllAreas();
