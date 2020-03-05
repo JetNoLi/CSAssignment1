@@ -8,7 +8,8 @@ public class LSArrayApp{
 	private int inCounter; // instrumentation counter
 
 	//constructor
-	//
+	/** creates an empty array and stores it and its length as instance variables allows us to vary the size of the input data, meaning we do not need to know the size of the array before hand */
+
 	public LSArrayApp(){ // creates an empty array and stores it and its length as instance variables
 		LSArray = null; 
 	       	arrLength = 0;
@@ -26,6 +27,7 @@ public class LSArrayApp{
 		return arrLength;
 		}
 
+	/** adds an item to the array */
 	public  void addToArray(LSC item){ // adds an item to the stored array 
 
 		LSC[] newLSArray = new LSC[arrLength+1];
@@ -43,11 +45,13 @@ public class LSArrayApp{
 		return LSArray;
 		}
 
+	/**Puts input in the same format as command Line Argument Input */
 	public static String makeInfo(String stage, String day, String startTime){
 		//returns key in same format as Command Line Argument Input
 		return stage + " " + day + " " + startTime;
 		}
 	
+	/** uses a for loop to find the matching item in the array, it then prints out the corresponding item in the array */
 	public void printAreas(String stage, String day, String startTime){
 		boolean check = false;// check if area is found
 
@@ -68,6 +72,7 @@ public class LSArrayApp{
 			}
 		}
 	
+	/** uses a for loop to print all data stored in LSC array */
 	public void printAllAreas(){
 		for (int i = 0; i < arrLength-1; i++){
 			System.out.println(LSArray[i]);
@@ -83,7 +88,8 @@ public class LSArrayApp{
 	public void resetCounter(){
 		inCounter = 0;
 		}
-
+	
+	/**does the same comparitve operations as printAreas but does not print anything, used for part 5 test purposes */
 	public void printAreasNull(String stage, String day, String startTime){
 		for (int i = 0; i <= arrLength -1; i++){
                         // instrumentation -  check keys are the same
@@ -123,11 +129,14 @@ public class LSArrayApp{
 	
 		else if (args.length == 0){
                         LSArray.printAllAreas();
+			System.out.println("Instrumentation Counter = " + LSArray.getInCounter());
                         }
 
                 else{
-                        System.out.println("Input entered in Incorrectly. Please Enter in the form:");
+                        System.out.println("Error Input entered in Incorrectly. Please Enter in the form:");
                         System.out.println(" stage day time, i.e. 1 1 10");
+			System.out.println("Instrumentation Counter = " + LSArray.getInCounter());
+
                         }		
 		
 		}// end of main

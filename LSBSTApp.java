@@ -5,18 +5,20 @@ public class LSBSTApp{
 	//instance variable - Binary Search Tree of Type LSC
 	private BinarySearchTree<LSC> LSTree;	
 	
-	//constructor - Creates an empty Binary Search Tree of Type LSC and stores it as an instance variable which we	can access through various accessor methods
-	
+	//constructor
+	/** Creates an empty Binary Search Tree of Type LSC and stores it as an instance variable which we can access through various accessor methods*/	
 	public LSBSTApp(){
 		LSTree = new BinarySearchTree<LSC>();
 		}
 
 	//methods 
+	/** adds an item to the tree by invoking the insert method of the binary search tree */
 	public void addToTree(LSC item){ // inserts item into the LSC BST 
 		LSTree.insert(item);
 		}
 
-	public void printAreas(String stage, String day, String startTime){// prints out the zones matching the key
+	/** by invoking the find method we are able to find the LSC which matches the input data which stores the zones affected, we then print these zones */
+	public void printAreas(String stage, String day, String startTime){
 		
 		try{
 			//LSC item = LSTree.find(new LSC(stage,day,startTime)).getData()// finds the matching LSC in the
@@ -29,8 +31,8 @@ public class LSBSTApp{
 			}
 		}
 
-	
-	public void printAllAreas(){ // prints out a list of all zones affected
+	/** uses inOrder traversal to print the entire list of zones */
+	public void printAllAreas(){ 
 		LSTree.inOrder();
 		}
 		
@@ -48,6 +50,7 @@ public class LSBSTApp{
 		LSTree.resetCounter();
 		}
 
+	/** Instrumentation method which has same comparitive operations as printAreas but does not print anything */
 	public void printAreasNull(String stage, String day, String startTime){
           	try{
                         LSC item = LSTree.find(new LSC(stage,day,startTime)).getData();
@@ -80,14 +83,18 @@ public class LSBSTApp{
 		if (args.length == 3){
 			LSCTree.printAreas(args[0],args[1],args[2]);
 			System.out.println("Insert Counter: " + LSCTree.getInsCounter());
-			System.out.println("Insert Counter: " + LSCTree.getFinCounter());
+			System.out.println("Find Counter: " + LSCTree.getFinCounter());
 			}
 		else if (args.length == 0){
 			LSCTree.printAllAreas();
+			System.out.println("Insert Counter: " + LSCTree.getInsCounter());
+                        System.out.println("Find Counter: " + LSCTree.getFinCounter());
 			}
 		else{
-			System.out.println("Input entered in Incorrectly. Please Enter in the form:");
+			System.out.println("Error input entered in Incorrectly. Please Enter in the form:");
 			System.out.println(" stage day time, i.e. 1 1 10");
+			System.out.println("Insert Counter: " + LSCTree.getInsCounter());
+                        System.out.println("Find Counter: " + LSCTree.getFinCounter());
 			}
 
 
